@@ -1,0 +1,17 @@
+export const keys = {
+  admins: "admins",
+  courses: "courses",
+  enrollmentRequests: "enrollmentRequests",
+  enrollmentRequest: "enrollmentRequest",
+  enrollments: "enrollments",
+  enrollment: "enrollment",
+  students: "students",
+  student: "student",
+  classLinks: "classLinks",
+  course: "course",
+  classLink: "classLink",
+  adminEnrollmentRequest: "adminEnrollmentRequest",
+  promocodes: "promocodes",
+  adminEnrollmentRequests: "adminEnrollmentRequests",
+  dashboard: "dashboard",
+};
