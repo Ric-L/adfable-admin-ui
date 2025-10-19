@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { useAuth } from "@/contexts/AuthContext";
 import { Eye, EyeOff, GraduationCap } from "lucide-react";
 import toast, { Toaster } from "react-hot-toast";
+import Image from "next/image";
 
 export default function LoginPage() {
   const [username, setUsername] = useState("");
@@ -48,8 +49,8 @@ export default function LoginPage() {
           {/* Header */}
           <div className="text-center mb-8">
             <div className="flex items-center justify-center mb-4">
-              <div className="bg-blue-600 p-3 rounded-full">
-                <GraduationCap className="h-8 w-8 text-white" />
+              <div className="p-3 rounded-full">
+                <Image alt="logo" src={"/logo.png"} width={150} height={150} />
               </div>
             </div>
             <h2 className="text-3xl font-bold text-gray-900">Welcome Back</h2>
@@ -57,11 +58,6 @@ export default function LoginPage() {
           </div>
 
           {/* Demo credentials info */}
-          <div className="mb-6 p-4 bg-blue-50 rounded-lg border border-blue-200">
-            <p className="text-sm text-blue-800 font-medium">Demo Credentials:</p>
-            <p className="text-sm text-blue-700">Username: admin</p>
-            <p className="text-sm text-blue-700">Password: password</p>
-          </div>
 
           {/* Form */}
           <form onSubmit={handleSubmit} className="space-y-6">
