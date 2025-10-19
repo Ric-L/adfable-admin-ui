@@ -68,7 +68,7 @@ export default function StudentsPage() {
     isLoading,
     isFetched,
     refetch,
-  } = useGetQuery<StudentData>({
+  } = useGetQuery({
     key: queryKey,
     func: queryConfig.useGetAllStudents.queryFn,
     params: dynamicParams,
