@@ -220,7 +220,10 @@ export default function EnrollmentRequestsPage() {
             <CardContent className="p-6">
               <div className="flex items-start justify-between">
                 <div className="flex items-start space-x-4 flex-1">
-                  <div className="h-12 w-12 rounded-full bg-gray-200 flex items-center justify-center text-gray-600 text-lg font-semibold">{request.student_name.charAt(0)}</div>
+                  <div className="h-12 w-12 rounded-full bg-gray-200 flex items-center justify-center text-gray-600 text-lg font-semibold">
+                    {request.student_name ? request.student_name.charAt(0) : "?"}
+                  </div>
+
                   <div className="flex-1">
                     <div className="flex items-center justify-between mb-2">
                       <h3 className="text-lg font-semibold text-gray-900">{request.student_name}</h3>
