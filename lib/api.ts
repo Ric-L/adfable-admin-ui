@@ -4,6 +4,7 @@ import { Methods, TLiveLinkUpdate, TQueryParams } from "./types/types";
 // Base URL config
 if (process.env.NODE_ENV === "development") {
   axios.defaults.baseURL = "http://127.0.0.1:8110/api/v1/admin";
+  // axios.defaults.baseURL = "https://afdableclasses.in/api/v1/admin";
 } else {
   axios.defaults.baseURL = "https://afdableclasses.in/api/v1/admin";
 }
