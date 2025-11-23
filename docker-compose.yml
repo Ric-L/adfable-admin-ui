@@ -1,0 +1,29 @@
+networks:
+  intranet:
+    external: true
+    name: tomthin-net
+
+services:
+  afdable-admin-ui:
+    image: afdable-admin-ui-frontend:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    container_name: afdable-admin-ui
+
+    environment:
+      - NEXT_TELEMETRY_DISABLED=1
+
+    networks:
+      - intranet
+
+    restart: always
+
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.afdable-admin-ui.rule=Host(`admin.afdableclasses.in`) || Host(`www.admin.afdableclasses.in`)"
+      - "traefik.http.routers.afdable-admin-ui.entrypoints=websecure"
+      - "traefik.http.routers.afdable-admin-ui.tls=true"
+      - "traefik.http.routers.afdable-admin-ui.tls.certresolver=le"
+      - "traefik.http.services.afdable-admin-ui.loadbalancer.server.port=3000"
